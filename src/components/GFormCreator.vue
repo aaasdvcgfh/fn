@@ -21,8 +21,8 @@ export default {
     const { nonCheck } = this
 
     // 尽量用false属性来增加, 只有新增的东西才多这个true属性
-    if (!nonCheck && !rules) throw new Error('看文档,哪个表单不验证啊？')
-    this.rulesHandler(rules)
+    // if (!nonCheck && !rules) throw new Error('看文档,哪个表单不验证啊？')
+    // this.rulesHandler(rules)
     if (items) {
       this.reaciveFileds(items)
     } else if (cards) {
@@ -145,8 +145,8 @@ export default {
         <h1>{title}</h1>
         {title && <hr />}
 
-        {/* 表单区域: JSX不能直接传递model属性  */}
-        <el-form ref="form" attrs={{ model: form }} rules={rules} label-width="80px">
+        {/* 表单区域: JSX不能直接传递model属性 rules={rules}  */}
+        <el-form ref="form" attrs={{ model: form }} label-width="80px">
           {cards ? this.renderCards(cards) : this.renderRows(items)}
         </el-form>
 
